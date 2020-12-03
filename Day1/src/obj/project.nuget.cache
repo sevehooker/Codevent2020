@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "pe+mSAh21Po+x1olBV5FllCRzgXVzuqE7W/lgWs8SDbfFujNn10LQeQOINwsMIIrssWerVBtApWEaWhZ3FgjIQ==",
+  "success": true,
+  "projectFilePath": "F:\\CodeLand\\AdventOfCode2020\\day1\\day1.fsproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Seve\\.nuget\\packages\\fsharp.core\\4.7.2\\fsharp.core.4.7.2.nupkg.sha512",
+    "C:\\Users\\Seve\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
