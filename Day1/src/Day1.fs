@@ -2,21 +2,30 @@
 
 module Day1 =
 
-    let getPairs (elem, list) =
-        List.allPairs [elem] list
+    let rec getPairs list =
+        match list with
+            | head :: tail -> List.allPairs [head] tail @ getPairs tail
+            | [] -> []
 
-    let equals2020 (a, b) = a + b = 2020
+    let rec getTriples elem list =
+        match list with
+            | head :: tail -> 
+                let triples = getPairs list
+                              |> List.map ( fun (a, b) -> (elem, a, b) );
+                triples @ getTriples head tail
+            | [] -> []
 
-    let product (a, b) = a * b
+    let equals2020 (a, b, c) = a + b + c = 2020
+
+    let product (a, b, c) = a * b * c
 
     let rec hasProduct (list) =
         match list with
-            | head :: tail when equals2020 head -> product head
-            | head :: tail -> hasProduct tail
+            | head :: _ when equals2020 head -> product head
+            | _ :: tail -> hasProduct tail
             | [] -> 0
 
-    let findProduct arr =
-        arr
-        |> Array.fold ( fun pairs elem -> pairs @ getPairs(elem, Array.toList arr) ) List.empty<(int * int)>
+    let findProduct (list: list<int>) =
+        getTriples list.Head list.Tail
         |> hasProduct
         
