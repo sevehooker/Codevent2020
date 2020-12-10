@@ -14,10 +14,9 @@ module Day1 =
             | head :: tail when equals2020 head -> product head
             | head :: tail -> hasProduct tail
             | [] -> 0
-            
-    let findProduct list =
-        list
-        |> Array.fold ( fun pairs elem -> Array.concat [ pairs ; getPairs(elem, list) ] ) []<()>
+
+    let findProduct arr =
+        arr
+        |> Array.fold ( fun pairs elem -> pairs @ getPairs(elem, Array.toList arr) ) List.empty<(int * int)>
         |> hasProduct
-        // |> Seq.collect (fun item -> list |> Seq.map(fun newItem -> (newItem, item)))
         
