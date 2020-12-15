@@ -10,8 +10,6 @@ module Day5 =
     let buttSpread min max = (max-(max-min+1)/2)
 
     let rec findSeat (butt:string, minRow:int, maxRow:int, minCol:int, maxCol:int) = 
-        // printfn "%s %d-%d %d-%d" butt minRow maxRow minCol maxCol
-
         if butt.Length > 0 then
             match butt.[0] with
             | 'F' -> findSeat(butt.[1..], minRow, buttSpread minRow maxRow, minCol, maxCol)
